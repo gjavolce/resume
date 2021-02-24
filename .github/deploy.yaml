@@ -4,7 +4,7 @@ on:
     branches: [main]
 defaults:
   run:
-    working-directory: .
+    working-directory: ..
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Tex to PDF
-        uses: ./actions/xelatex
+        uses: ../actions/xelatex
         env:
           OUT_DIR: public
       - name: Upload artifacts
